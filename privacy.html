@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LabPulse Privacy Policy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <a href="index.html"><img src="icon.png" alt="LabPulse icon"></a>
+    <div>
+      <h1>Privacy Policy</h1>
+      <span class="muted">LabPulse: Homelab Monitor · Effective November 24, 2026</span>
+    </div>
+  </header>
+
+  <div class="card">
+    <p><strong>Short version:</strong> LabPulse does not collect, store, sell or share any of your data. Everything you set up stays on your device.</p>
+  </div>
+
+  <h2>What LabPulse stores, and where</h2>
+  <ul>
+    <li><strong>Your targets</strong> (names, addresses, ports, Proxmox node names, settings) and their <strong>check history</strong> (status and latency for up to 30 days) are stored locally on your device, shared only between the LabPulse app and its widgets.</li>
+    <li><strong>Credentials</strong> you enter (Proxmox API tokens, HTTP authorization headers) are stored only in the iOS Keychain on your device.</li>
+    <li>None of this is sent to the developer or to any third party.</li>
+  </ul>
+
+  <h2>Network connections</h2>
+  <p>LabPulse connects only to the addresses you configure (for example your Proxmox server or self-hosted services), directly from your device. There is no LabPulse server, account, analytics, advertising or crash-reporting service, and the app contains no third-party SDKs.</p>
+  <p>iOS asks for <strong>Local Network</strong> permission because checking devices on your home network requires it.</p>
+
+  <h2>Notifications</h2>
+  <p>If you turn on down alerts, notifications are created locally on your device. No push notification service is used.</p>
+
+  <h2>Backups</h2>
+  <p>Exporting a configuration backup creates a JSON file that you choose where to save or share. Backups never include API tokens or passwords.</p>
+
+  <h2>Tracking</h2>
+  <p>LabPulse does not track you across apps or websites and does not use advertising identifiers.</p>
+
+  <h2>Children</h2>
+  <p>LabPulse does not knowingly collect information from anyone, including children.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the updated version will be posted on this page with a new effective date.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about privacy: open an issue at <a href="https://github.com/juanbeniteza/labpulse-site/issues">github.com/juanbeniteza/labpulse-site/issues</a>.</p>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="support.html">Support</a>
+  </nav>
+</main>
+</body>
+</html>

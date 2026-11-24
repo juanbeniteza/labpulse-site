@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LabPulse Support</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <a href="index.html"><img src="icon.png" alt="LabPulse icon"></a>
+    <div>
+      <h1>Support</h1>
+      <span class="muted">LabPulse: Homelab Monitor</span>
+    </div>
+  </header>
+
+  <div class="card">
+    <p>Found a bug or have a question or idea? <a href="https://github.com/juanbeniteza/labpulse-site/issues/new">Open an issue on GitHub</a>. Please include your iOS version and what kind of target is involved (HTTP, TCP or Proxmox), but never your API tokens.</p>
+  </div>
+
+  <h2>Common questions</h2>
+
+  <h3>All my targets show as down</h3>
+  <p>Make sure LabPulse has <strong>Local Network</strong> access: Settings › Privacy &amp; Security › Local Network › LabPulse. Away from home, your home targets can only be reached through a VPN such as Tailscale or WireGuard; otherwise LabPulse pauses them (Away mode) instead of marking them down.</p>
+
+  <h3>How do I create a read-only Proxmox token?</h3>
+  <p>Run these on a Proxmox node shell, then enter the token ID <code>monitor@pve!labpulse</code> and the secret in LabPulse:</p>
+  <pre>pveum user add monitor@pve --comment "LabPulse read-only"
+pveum user token add monitor@pve labpulse --privsep 1
+pveum acl modify / --tokens 'monitor@pve!labpulse' --roles PVEAuditor</pre>
+  <p>LabPulse only reads data and never changes anything on your server.</p>
+
+  <h3>"Certificate not trusted"</h3>
+  <p>Proxmox uses a self-signed certificate by default. Edit the target and turn on <strong>Allow Self-Signed Certificate</strong>. It applies only to that one host.</p>
+
+  <h3>"Blocked by App Transport Security"</h3>
+  <p>Plain <code>http://</code> is allowed for local IP addresses and <code>.local</code> names. For other hostnames, use <code>https://</code>.</p>
+
+  <h3>How do I add widgets?</h3>
+  <p>Long-press your Home Screen or Lock Screen, tap Edit › Add Widget and choose LabPulse. Long-press a widget and choose Edit Widget to pick which target or Proxmox node it shows.</p>
+
+  <h3>How often are targets checked?</h3>
+  <p>Every 5, 10 or 15 minutes while the app is open (Settings › Check Interval) and when widgets refresh. In the background, iOS decides when LabPulse may run, usually every 15 minutes or more. Tap the refresh button on a widget to check immediately.</p>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+  </nav>
+</main>
+</body>
+</html>
